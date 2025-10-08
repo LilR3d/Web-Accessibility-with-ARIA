@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIA Accessibility</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="container">
+      <h1>Making the Web Accessible with ARIA</h1>
+      <!-- Explanatory paragraph about ARIA -->
+      <p>
+        ARIA (Accessible Rich Internet Applications) is a set of attributes that
+        enhance web accessibility by providing additional information to
+        assistive technologies like screen readers. These attributes help
+        communicate the purpose, state, and behavior of interface elements to
+        users who rely on assistive technology to navigate the web.
+      </p>
+
+      <!-- Navigation section with role attribute -->
+      <!-- The role="navigation" attribute explicitly identifies this section as navigation for assistive technologies -->
+
+      <nav role="navigation">
+        <ul>
+          <li><a href="about">About Accessibilitiy</a></li>
+          <li><a href="aria">ARIA Basics</a></li>
+          <li><a href="examples">Examples</a></li>
+          <li><a href="resources">Resources</a></li>
+        </ul>
+      </nav>
+
+      <h2>Why Web Accessibility Matters</h2>
+      <!-- Explanatory paragraph about accessibility -->
+      <p>
+        Web accessibility ensures that everyone, regardless of their abilities
+        or disabilities, can access and interact with online content. This
+        includes people with visual, auditory, motor, or cognitive impairments.
+        By implementing accessibility best practices, we create a more inclusive
+        we experience that benefits all users, not just those with disabilities.
+        Good accessibility often leads to better usability for everyone.
+      </p>
+
+      <!-- Form demonstration section -->
+      <div class="form-section">
+        <h2>Interactive Form Examples</h2>
+
+        <!-- First input field with aria-label -->
+        <!-- aria-label provides an accessible name for the input when a visible label isn't used -->
+
+        <div class="form-group">
+          <input
+            type="text"
+            id="search"
+            aria-label="Search this website"
+            placeholder="Search..."
+          />
+          <h5>
+            This input uses aria-label to provide context for screen readers
+          </h5>
+        </div>
+
+        <!-- Second input field with associated label tag -->
+        <!-- The label's "for" attribute connects it to the input's "id", creating an explicit association -->
+
+        <div class="form-group">
+          <label for="email-input">Email address</label>
+          <input
+            type="email"
+            id="email-input"
+            placeholder="your.email@example.com"
+          />
+          <h5>
+            This input uses a standard &lt;label&gt; tag with "for" attribute
+          </h5>
+        </div>
+
+        <!-- Button with aria-label -->
+        <!-- aria-label provides additional context beyond the visible button text -->
+
+        <button aria-label="Submit the contact form">Submit</button>
+
+        <!-- Link with button role -->
+        <!-- role="button" tells assistive technologies to treat this link as a button interaction -->
+        <!-- This is useful when a link performs an action rather than navigation -->
+
+        <a
+          href="#"
+          class="button-link"
+          role="button"
+          onclick="alert('Button clicked!'); return false;"
+          >Action Link</a
+        >
+
+        <h5>
+          The link above uses role="button" to indicate it performs an action
+        </h5>
+
+        <h2>Key Takeaways</h2>
+        <p>
+          Using ARIA attributes can significantly improve the accessibility of
+          your website. However, it's important to remember that native HTML
+          semantics should always be your first choice. ARIA should be used to
+          enhance accessibility when HTML alone isn't sufficient, not as a
+          replacement for proper semantic markup.
+        </p>
+
+        <script src="./scripts.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
